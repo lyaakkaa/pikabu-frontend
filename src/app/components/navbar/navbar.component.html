@@ -1,18 +1,18 @@
-<div class="hero">
-	<nav>
-		<div class="logoo">
-			<img src="https://gegechkori.ru/img/icons/pikabu.svg" alt="cupcake">
-			<a routerLink="['/']"><h2 class="logo">pikabu</h2></a>
-		</div>
-	
-		<ul>
-			<li><a href="#">Лучшее</a></li>
-			<li><a href="#">Свежее</a></li>
-			<li><a href="#">Подписки</a></li>
-			<li><a href="#">Блоги</a></li>
-			<li><a href="#">Курсы</a></li>
-			<!-- <li><input class="search" type="text" placeholder="Поиск"></li> -->
-		</ul>
-		<a routerLink="login/"><button type="button">Войти</button></a>
-	</nav>
-</div>
+<header>
+  <img class="logo" src="assets/pikabu-logo.png">
+  <nav>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Горячее</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">Лучшее</a></li>
+      <li><a routerLink="/services" routerLinkActive="active">Свежее</a></li>
+    </ul>
+  </nav>
+
+  <div class="search">
+    <input type="text" placeholder="Search">
+    <button>Go</button>
+  </div>
+  <div class="login">
+    <a href="#">Login</a>
+  </div>
+</header>
