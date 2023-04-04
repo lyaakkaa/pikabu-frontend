@@ -1,4 +1,4 @@
-<header>
+<header [ngClass]="{ 'scrolled': isScrolled, 'visible': showHeader }">
   <img class="logo" src="assets/pikabu-logo.png">
   <nav>
     <ul>
@@ -11,8 +11,5 @@
   <div class="search">
     <input type="text" placeholder="Search">
     <button>Go</button>
-  </div>
-  <div class="login">
-    <a href="#">Login</a>
   </div>
 </header>

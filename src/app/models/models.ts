@@ -15,8 +15,8 @@ export interface IPost{
     title: string,
     body:string,
     post_likes: number,
-    post_comments:number,
-    comments: IComment
+    post_comments: number,
+    comments: IComment[]
 }
 
 export interface IComment{
