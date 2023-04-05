@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"name": "webka",
+			"path": "../../../OneDrive/Рабочий стол/webka"
+		},
+		{
+			"path": "../../../OneDrive/Рабочий стол/web"
+		},
+		{
+			"path": "../../Frontend_element"
+		},
+		{
+			"path": "../../WEBDEV2023"
+		},
+		{
+			"path": "../../django-mini-projects"
+		},
+		{
+			"path": "../../flight"
+		},
+		{
+			"path": "../../picaboo"
+		},
+		{
+			"path": "../../reddit"
+		},
+		{
+			"path": "../../picabu"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../angular-project"
+		},
+		{
+			"path": "../../anguar-mini-projects"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WEBDEV2023",
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}

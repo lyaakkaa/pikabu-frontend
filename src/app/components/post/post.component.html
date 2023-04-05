@@ -1,0 +1,19 @@
+<div class="post-wrapper">
+  <div class="vote-buttons">
+    <button><i class="arrow up"></i></button>
+    <p>{{ post.post_likes }}</p>
+    <button><i class="arrow down"></i></button>
+  </div>
+  <div class="post">
+    <div class="post-header">
+      <h2>{{ post.title }}</h2>
+    </div>
+    <hr>
+    <div class="post-body">
+      <p>{{ post.body }}</p>
+    </div>
+    <div class="post-footer">
+      <button class="comments"><a [routerLink]="['/post/comments', post.id]">View Comments</a> </button>
+    </div>
+  </div>
+</div>
