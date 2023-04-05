@@ -7,5 +7,4 @@ import { IComment } from 'src/app/models/models';
   styleUrls: ['./post-comments.component.css']
 })
 export class PostCommentsComponent {
-  @Input() comments: IComment[];
 }

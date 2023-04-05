@@ -1,10 +1,10 @@
 <header [ngClass]="{ 'scrolled': isScrolled, 'visible': showHeader }">
-  <img class="logo" src="assets/pikabu-logo.png">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><img class="logo" src="assets/pikabu-logo.png"></a>
   <nav>
     <ul>
-      <li><a routerLink="/home" routerLinkActive="active">Горячее</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">Лучшее</a></li>
-      <li><a routerLink="/services" routerLinkActive="active">Свежее</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Горячее</a></li>
+      <li><a routerLink="/best" routerLinkActive="active">Лучшее</a></li>
+      <li><a routerLink="/new" routerLinkActive="active">Свежее</a></li>
     </ul>
   </nav>
 

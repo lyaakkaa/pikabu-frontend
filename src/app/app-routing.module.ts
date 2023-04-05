@@ -5,6 +5,8 @@ import { PostCommentsComponent } from './components/post-comments/post-comments.
 
 const routes: Routes = [
   {path: '', component: PostListComponent},
+  {path: 'best', component: PostListComponent},
+  {path: 'new', component: PostListComponent},
   {path: 'post/comments/:id', component:  PostCommentsComponent},
 ];
 
