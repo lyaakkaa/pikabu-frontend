@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IComment } from 'src/app/models/models';
 
 @Component({
   selector: 'app-comment',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent {
+  @Input() comment: IComment;
 
+  upvote() {
+    this.comment.comment_likes++;
+  }
+
+  downvote() {
+    this.comment.comment_likes--;
+  }
 }
