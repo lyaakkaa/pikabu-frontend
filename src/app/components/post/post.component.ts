@@ -8,4 +8,12 @@ import { IPost } from 'src/app/models/models';
 })
 export class PostComponent {
   @Input() post: IPost;
+
+  upvote() {
+    this.post.post_likes++;
+  }
+
+  downvote() {
+    this.post.post_likes--;
+  }
 }
