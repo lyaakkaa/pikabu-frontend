@@ -14,6 +14,8 @@ export class CommentComponent {
   }
 
   downvote() {
-    this.comment.comment_likes--;
+    if(this.comment.comment_likes > 0){
+      this.comment.comment_likes--;
+    }
   }
 }

@@ -14,6 +14,8 @@ export class PostComponent {
   }
 
   downvote() {
-    this.post.post_likes--;
+    if(this.post.post_likes > 0){
+      this.post.post_likes--;
+    }
   }
 }
