@@ -1,17 +1,20 @@
 <div class="post-wrapper">
   <div class="vote-buttons">
-    <button><i class="arrow up"></i></button>
+    <button (click)=incrementCount()><i class="arrow up"></i></button>
     <p>{{ post.post_likes }}</p>
-    <button><i class="arrow down"></i></button>
+    <button (click)=decrementCount()><i class="arrow down"></i></button>
   </div>
   <div class="post">
     <div class="post-header">
       <h2>{{ post.title }}</h2>
     </div>
+    <p class = "date"> {{post.created_date | date}} </p>
     <hr>
     <div class="post-body">
       <p>{{ post.body }}</p>
     </div>
+    <br>
+    <p>By {{ post.author.username }}</p>
     <div class="post-footer">
       <button class="comments"><a [routerLink]="['/post/comments', post.id]">View Comments</a> </button>
     </div>

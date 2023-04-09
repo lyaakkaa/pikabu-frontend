@@ -9,11 +9,14 @@ import { IComment } from 'src/app/models/models';
 export class CommentComponent {
   @Input() comment: IComment;
 
+
   upvote() {
     this.comment.comment_likes++;
   }
 
   downvote() {
-    this.comment.comment_likes--;
+    if(this.comment.comment_likes > 0){
+      this.comment.comment_likes--;
+    }
   }
 }

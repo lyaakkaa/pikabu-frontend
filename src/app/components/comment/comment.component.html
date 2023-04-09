@@ -1,10 +1,12 @@
 <div class="comment">
     <div class="likes">
+        <div class="vote-buttons">
         <button (click)="upvote()" class="upvote">
         </button>
         <span>{{ comment.comment_likes }}</span>
         <button (click)="downvote()" class="downvote">
         </button>
+        </div>
     </div>
     <div class="text">{{ comment.text }}</div>
     <div class="details">
