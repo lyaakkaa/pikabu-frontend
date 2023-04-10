@@ -66,6 +66,7 @@ button[type="button"]:hover {
   align-items: center;
   justify-content: center;
   margin: 20px 0;
+  font-size: 12px;
 }
 
 .or-continue hr {
