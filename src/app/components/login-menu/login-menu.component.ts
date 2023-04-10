@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-menu.component.css']
 })
 export class LoginMenuComponent {
+  registerMode: boolean = false;
+
 
 }
