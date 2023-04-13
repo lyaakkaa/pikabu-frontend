@@ -34,7 +34,7 @@ input[type="password"]:focus {
   border-color: #333;
 }
 
-a {
+.form-group a, .social-login a{
   display: block;
   margin: 20px;
   text-align: center;
@@ -60,6 +60,8 @@ button[type="submit"]:hover,
 button[type="button"]:hover {
   background-color: #222;
 }
+
+
 
 .or-continue {
   display: flex;
@@ -129,4 +131,32 @@ button[type="button"]:hover {
 
 .vk-login {
   background-color: #4c75a3;
+}
+
+
+.add-post{
+  position: fixed;
+  top: 650px;
+  left: 70%;
+  width: 20%;
+  padding: 20px;
+}
+
+.add-post button{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8ac858;
+  color: #fff;
+}
+
+.add-post button:hover{
+  opacity: 0.8;
+}
+
+.add-post a{
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
 }

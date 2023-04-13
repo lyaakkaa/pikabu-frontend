@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostCommentsComponent } from './components/post-comments/post-comments.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { PostFormComponent } from './components/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
     PostCommentsComponent,
     CommentComponent,
     CommentFormComponent,
+    PostFormComponent,
   ],
   imports: [
     BrowserModule,
