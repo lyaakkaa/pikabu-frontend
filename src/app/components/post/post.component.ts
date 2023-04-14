@@ -10,14 +10,13 @@ import { PostService } from 'src/app/services/post_service';
 export class PostComponent {
   @Input() post: IPost;
 
-  incrementCount() {
+  upvote() {
     this.post.post_likes++;
   }
 
-  decrementCount() {
+  downvote() {
     if(this.post.post_likes > 0){
       this.post.post_likes--;
     }
   }
-
 }

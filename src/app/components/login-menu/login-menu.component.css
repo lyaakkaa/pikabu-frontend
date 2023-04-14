@@ -34,7 +34,7 @@ input[type="password"]:focus {
   border-color: #333;
 }
 
-a {
+.form-group a, .social-login a{
   display: block;
   margin: 20px;
   text-align: center;
@@ -59,4 +59,104 @@ button[type="button"] {
 button[type="submit"]:hover,
 button[type="button"]:hover {
   background-color: #222;
+}
+
+
+
+.or-continue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+.or-continue hr {
+  flex: 1;
+  height: 1px;
+  margin: 0 10px;
+  border: none;
+  background-color: #ccc;
+}
+
+.left-line {
+  margin-right: 30px;
+}
+
+.right-line {
+  margin-left: 30px;
+}
+
+
+
+.social-login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-login a {
+  width: 100%;
+  text-decoration: none;
+  margin: 4px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.social-login span{
+  margin-left: 10px;
+}
+
+
+.social-login a:hover {
+  opacity: 0.8;
+}
+
+.google-login {
+  background-color: #dd4b39;
+}
+
+.facebook-login {
+  background-color: #3b5998;
+}
+
+.twitter-login {
+  background-color: #1da1f2;
+}
+
+.vk-login {
+  background-color: #4c75a3;
+}
+
+
+.add-post{
+  position: fixed;
+  top: 650px;
+  left: 70%;
+  width: 20%;
+  padding: 20px;
+}
+
+.add-post button{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8ac858;
+  color: #fff;
+}
+
+.add-post button:hover{
+  opacity: 0.8;
+}
+
+.add-post a{
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
 }

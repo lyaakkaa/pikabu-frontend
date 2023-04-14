@@ -17,16 +17,17 @@ export class CommentFormComponent{
 
   onSubmit() {
     const author: IUser = {
-      id: 0, 
+
+      id: 0,
       username: this.author,
-      password: '' 
+      password: ''
     };
     const comment: IComment = {
-      id: 0, 
+      id: 0,
       author,
       created_date: new Date(),
       text: this.text,
-      comment_likes: 0 
+      comment_likes: 0
     };
     this.commentCreated.emit(comment);
     this.author = '';

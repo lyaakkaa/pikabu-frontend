@@ -1,8 +1,8 @@
 <div class="post-wrapper">
   <div class="vote-buttons">
-    <button (click)=incrementCount()><i class="arrow up"></i></button>
+    <button (click)="upvote()" class="upvote"><i class="arrow up"></i></button>
     <p>{{ post.post_likes }}</p>
-    <button (click)=decrementCount()><i class="arrow down"></i></button>
+    <button (click)="downvote()" class="downvote"><i class="arrow down"></i></button>
   </div>
   <div class="post">
     <div class="post-header">
