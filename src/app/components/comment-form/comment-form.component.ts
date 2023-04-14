@@ -17,6 +17,7 @@ export class CommentFormComponent{
 
   onSubmit() {
     const author: IUser = {
+
       id: 0,
       username: this.author,
       password: ''

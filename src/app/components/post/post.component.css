@@ -88,3 +88,12 @@ hr {
 .comments:hover {
   color: #333;
 }
+
+
+.post .date{
+  top:40px;
+  right: 50px;
+  font-size: 0.6em;
+  font-family: serif;
+}
+

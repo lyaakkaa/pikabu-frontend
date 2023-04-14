@@ -9,6 +9,7 @@ import { IComment } from 'src/app/models/models';
 export class CommentComponent {
   @Input() comment: IComment;
 
+
   upvote() {
     this.comment.comment_likes++;
   }
