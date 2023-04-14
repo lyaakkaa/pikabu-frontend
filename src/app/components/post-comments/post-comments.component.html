@@ -1,6 +1,9 @@
 <div>
-    <div class="comments">
-       
+  <div class="comments">
+    <app-comment-form></app-comment-form>
+    <div *ngFor="let comment of comments">
+      <app-comment [comment]="comment"></app-comment>
     </div>
-    <app-login-menu></app-login-menu>
+  </div>
+  <app-login-menu></app-login-menu>
 </div>

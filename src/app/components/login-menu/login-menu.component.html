@@ -4,14 +4,52 @@
       <label for="email">Email</label>
       <input type="email" id="email" name="email" placeholder="Email" required>
     </div>
+    <div class="form-group" *ngIf="registerMode">
+      <label for="nickname">Nickname</label>
+      <input type="email" id="nickname" name="nickname" placeholder="Nickname" required>
+    </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Password" required>
-      <a href="#">Forgot password?</a>
+      <a href="#" *ngIf="!registerMode">Forgot password?</a>
     </div>
     <div class="form-group">
-      <button type="submit">Login</button>
-      <button type="button">Register</button>
+      <button type="submit" *ngIf="!registerMode">Login</button>
+      <button type="button" (click)="registerMode = true" *ngIf="!registerMode">Register</button>
+      <button type="submit" *ngIf="registerMode">Register</button>
+      <button type="button" (click)="registerMode = false" *ngIf="registerMode">I already have an account</button>
     </div>
+
+    <div class="or-continue">
+      <hr class="left-line">
+      <span>or continue with</span>
+      <hr class="right-line">
+    </div>
+
+
+    <div class="social-login">
+      <a href="#" class="google-login">
+        <i class="fa fa-google"></i>
+        <span>Google</span>
+      </a>
+      <a href="#" class="facebook-login">
+        <i class="fa fa-facebook"></i>
+        <span>Facebook</span>
+      </a>
+      <a href="#" class="twitter-login">
+        <i class="fa fa-twitter"></i>
+        <span>Twitter</span>
+      </a>
+      <a href="#" class="vk-login">
+        <i class="fa fa-vk"></i>
+        <span>VK</span>
+      </a>
+    </div>
+
   </form>
 </div>
+
+<div class="add-post">
+  <button><a routerLink="post/add"> + Add post </a></button>
+</div>
+
