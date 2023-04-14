@@ -12,7 +12,6 @@ import { PostCommentsComponent } from './components/post-comments/post-comments.
 import { CommentComponent } from './components/comment/comment.component';
 import { FormsModule } from '@angular/forms';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
-import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 
 @NgModule({

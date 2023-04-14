@@ -40,26 +40,30 @@ nav a {
 
 nav a:hover,
 nav a.active {
-  background-color: #333;
+  background-color: #8ac858;
   color: #fff;
 }
 
 .search input {
   padding: 5px;
   border-radius: 5px;
-  border: none;
+  border-color: #8ac858;
+  border-style: solid;
+}
+
+.search input:focus {
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  border-color: #8ac858;
+  border-style: solid;
 }
 
 .search button {
   padding: 5px;
-  background-color: #333;
+  background-color: #8ac858;
   color: #fff;
   border: none;
   border-radius: 5px;
   margin-left: 10px;
-}
-
-.login a {
-  color: #333;
-  text-decoration: none;
 }
