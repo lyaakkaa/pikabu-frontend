@@ -11,6 +11,7 @@ import { PostService } from 'src/app/services/post-service';
 export class PostListComponent implements OnInit {
   posts: IPost[];
 
+
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
