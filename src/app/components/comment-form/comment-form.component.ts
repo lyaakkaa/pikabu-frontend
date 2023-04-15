@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, OnInit, ChangeDetectorRef } from '@angular/core';
 import { IComment, IUser } from 'src/app/models/models';
-import { CommentService } from 'src/app/services/comment_service';
+import { CommentService } from 'src/app/services/comment-service';
 
 @Component({
   selector: 'app-comment-form',
