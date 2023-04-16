@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', component: PostListComponent},
   {path: 'best', component: PostListComponent},
   {path: 'new', component: PostListComponent},
-  {path: 'post/comments/:id', component:  PostCommentsComponent},
+  {path: 'posts/:id/comments', component:  PostCommentsComponent},
   {path: 'post/add', component: PostFormComponent}
 ];
 

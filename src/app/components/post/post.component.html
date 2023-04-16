@@ -16,7 +16,7 @@
     <br>
     <p>By {{ post.author.username }}</p>
     <div class="post-footer">
-      <button class="comments"><a [routerLink]="['/post/comments', post.id]">View Comments</a> </button>
+      <button class="comments"><a [routerLink]="['posts', post.id, 'comments']">View Comments</a> </button>
     </div>
   </div>
 </div>

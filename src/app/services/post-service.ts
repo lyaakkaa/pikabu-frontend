@@ -62,21 +62,7 @@ export class PostService {
   getPostsByCategoryId(id: any): Observable<IPost[]> {
     return this.client.get<IPost[]>(`${this.BASE_URL}/api/categories/${id}/posts/`);
   }
-  getComments(id: string): Observable<IComment[]>{
-    return this.client.get<IComment[]>(`${this.BASE_URL}/api/posts/${id}/comments/`);
-  }
 
-  createComment(id: string, comment: IComment): Observable<any>{
-    return this.client.post(`${this.BASE_URL}/api/posts/${id}/comments/`, comment);
-  }
-
-  updateComment(id: string, comment: IComment): Observable<any>{
-    return this.client.put(`${this.BASE_URL}/api/posts/${id}/comments/${comment.id}/`, comment);
-  }
-
-  deleteComment(id: string, commentId: number): Observable<any>{
-    return this.client.delete(`${this.BASE_URL}/api/posts/${id}/comments/${commentId}/`);
-  }
 
 
 }
