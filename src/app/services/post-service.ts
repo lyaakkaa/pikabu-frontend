@@ -59,7 +59,7 @@ export class PostService {
     return this.client.get<IPost>(`${this.BASE_URL}/api/posts/${id}/`);
   }
 
-  getPostsByCategoryId(id: any): Observable<IPost[]> {
+  getPostsByCategoryId(id: number): Observable<IPost[]> {
     return this.client.get<IPost[]>(`${this.BASE_URL}/api/categories/${id}/posts/`);
   }
   deletePost(id: number): Observable<any> {
