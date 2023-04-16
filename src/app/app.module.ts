@@ -13,6 +13,12 @@ import { CommentComponent } from './components/comment/comment.component';
 import { FormsModule } from '@angular/forms';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
+import { BestPostListComponent } from './components/best-post-list/best-post-list.component';
+import { NewPostListComponent } from './components/new-post-list/new-post-list.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -25,12 +31,18 @@ import { PostFormComponent } from './components/post-form/post-form.component';
     CommentComponent,
     CommentFormComponent,
     PostFormComponent,
+    BestPostListComponent,
+    NewPostListComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

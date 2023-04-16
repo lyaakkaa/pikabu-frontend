@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IComment } from 'src/app/models/models';
-import { CommentService } from 'src/app/services/comment_service';
+import { CommentService } from 'src/app/services/comment-service';
 
 @Component({
   selector: 'app-post-comments',
@@ -16,9 +16,10 @@ export class PostCommentsComponent {
 
   ngOnInit(): void {
     this.postId = parseInt(this.route.snapshot.paramMap.get('id') ?? '0');
-
-    this.commentService.getCommentsByPostId(this.postId).subscribe((comments) => {
-      this.comments = comments
+    // console.log(this.postId)
+    this.commentService.getComments(this.postId).subscribe((comments:IComment[]) => {
+      this.comments = comments;
+      // console.log(comments)
     });
   }
 }
