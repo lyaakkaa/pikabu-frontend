@@ -5,11 +5,13 @@ import { PostCommentsComponent } from './components/post-comments/post-comments.
 import {PostFormComponent} from "./components/post-form/post-form.component";
 import {BestPostListComponent} from "./components/best-post-list/best-post-list.component";
 import {NewPostListComponent} from "./components/new-post-list/new-post-list.component";
+import {SearchBarComponent} from "./components/search-bar/search-bar.component";
 
 const routes: Routes = [
   {path: '', component: PostListComponent},
   {path: 'best', component: BestPostListComponent},
   {path: 'new', component: NewPostListComponent},
+  { path: 'search', component: SearchBarComponent },
   {path: 'posts/:id/comments', component:  PostCommentsComponent},
   {path: 'post/add', component: PostFormComponent}
 ];
