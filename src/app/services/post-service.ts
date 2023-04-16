@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient } from '@angular/common/http';
-import { IComment, IPost } from "../models/models";
+import {  IPost } from "../models/models";
 
 
 @Injectable({
@@ -62,7 +62,11 @@ export class PostService {
   getPostsByCategoryId(id: any): Observable<IPost[]> {
     return this.client.get<IPost[]>(`${this.BASE_URL}/api/categories/${id}/posts/`);
   }
-
-
-
+  deletePost(id: number): Observable<any> {
+    return this.client.delete(
+      `${this.BASE_URL}/api/posts/${id}`);
+  }
+  createPost(newPost: IPost): Observable<IPost> {
+    return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, newPost);
+  }
 }

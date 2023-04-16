@@ -10,8 +10,9 @@ import {Router} from "@angular/router";
 })
 export class PostComponent {
   @Input() post: IPost;
+  posts: IPost[] = [];
 
-  constructor(private router : Router){}
+  constructor(private router : Router,private postService: PostService){}
 
   upvote() {
     this.post.post_likes++;
@@ -24,5 +25,10 @@ export class PostComponent {
   }
   listOfComments(post: IPost){
     this.router.navigate(['/posts', post.id, 'comments'])
+  }
+  deletePost(post_id: number) {
+    this.postService.deletePost(post_id).subscribe(() => {
+      this.posts = this.posts.filter((post) => post.id !== post_id);
+    });
   }
 }

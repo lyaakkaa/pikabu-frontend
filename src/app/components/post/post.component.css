@@ -97,3 +97,26 @@ hr {
   font-family: serif;
 }
 
+.delete-button {
+  background-color: #ff3333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+/* Add these styles to make the button look similar to other buttons */
+.delete-button {
+  margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
