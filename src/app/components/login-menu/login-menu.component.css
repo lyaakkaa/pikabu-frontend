@@ -82,7 +82,7 @@ button[type="button"]:hover {
 
 .add-post {
   position: fixed;
-  top: 420px;
+  top: 200px;
   left: 70%;
   width: 20%;
   padding: 20px;
