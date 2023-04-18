@@ -12,6 +12,7 @@ export class PostService {
   BASE_URL = ' http://127.0.0.1:8000';
 
 
+
   constructor(private client: HttpClient) { }
 
     // getPosts(): Observable<IPost[]> {
@@ -66,7 +67,10 @@ export class PostService {
     return this.client.delete(
       `${this.BASE_URL}/api/posts/${id}`);
   }
-  createPost(newPost: IPost): Observable<IPost> {
-    return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, newPost);
+  // createPost(newPost: IPost): Observable<IPost> {
+  //   return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, newPost);
+  // }
+  createPost(data: object): Observable<IPost> {
+    return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, data);
   }
 }

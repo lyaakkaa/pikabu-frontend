@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { LoginMenuComponent } from './components/login-menu/login-menu.component';
 import { PostComponent } from './components/post/post.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { PostCommentsComponent } from './components/post-comments/post-comments.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { FormsModule } from '@angular/forms';
@@ -17,8 +17,8 @@ import { BestPostListComponent } from './components/best-post-list/best-post-lis
 import { NewPostListComponent } from './components/new-post-list/new-post-list.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
-import {MatFormFieldModule} from "@angular/material/form-field";
+import {AuthInterceptor} from "./interceptors/auth-interceptor";
+
 
 @NgModule({
   declarations: [
@@ -41,10 +41,14 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
