@@ -24,6 +24,7 @@ export class LoginMenuComponent implements OnInit{
   }
 
 
+
   submit() {
     if (this.registerMode) {
       this.email = this.email.trim();
