@@ -1,4 +1,4 @@
-.login-menu, .welcome {
+.login-menu, .logged {
   position: fixed;
   top: 100px;
   left: 70%;
@@ -9,8 +9,9 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.welcome h5{
+.logged h5 {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .form-group {
@@ -77,12 +78,9 @@ button[type="button"]:hover {
 }
 
 
-
-
-
 .add-post {
   position: fixed;
-  top: 200px;
+  top: 220px;
   left: 70%;
   width: 20%;
   padding: 20px;

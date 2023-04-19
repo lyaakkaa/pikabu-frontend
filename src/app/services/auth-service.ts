@@ -20,11 +20,6 @@ export class AuthService {
         return token;
     }
 
-    // signIn(username: string, password: string) {
-    //     const token = "";
-    //     console.log("works");
-    //     localStorage.setItem('auth_token', token);
-    // }
     signIn(username: string, password: string): Observable<AuthToken> {
       console.log("works");
       return this.client.post<AuthToken>(`${this.BASE_URL}/signin`, {
