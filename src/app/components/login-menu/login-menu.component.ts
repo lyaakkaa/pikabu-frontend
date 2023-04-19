@@ -12,6 +12,7 @@ export class LoginMenuComponent implements OnInit{
   registerMode: boolean = false;
   password: string = ""
   username: string = ""
+  email: string = ""
 
   constructor(private authService: AuthService) { }
 
@@ -25,7 +26,24 @@ export class LoginMenuComponent implements OnInit{
 
   submit() {
     if (this.registerMode) {
-      this.authService.signUp(this.username, this.password);
+      this.email = this.email.trim();
+      this.password = this.password.trim();
+      this.username = this.username.trim();
+      if (!(this.username && this.password && this.email)) {
+        window.alert('Email, password and username shouldn\'t be empty!');
+        return;
+      }
+      this.authService.signUp(this.username, this.password, this.email)
+        .subscribe((data) => {
+          localStorage.setItem('token', data.token);
+          this.username = '';
+          this.email = '';
+          this.password = '';
+        }, error => {
+          window.alert('Registration wasn\'t accomplished, please register again!');
+        });
+
+
     } else {
       this.password = this.password.trim();
       this.username = this.username.trim();

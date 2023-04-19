@@ -33,10 +33,13 @@ export class AuthService {
       });
     }
 
-    signUp(username: string, password: string) {
-        const token = "";
-        console.log("works");
-        localStorage.setItem('auth_token', token);
+    signUp(username: string, password: string, email: string): Observable<AuthToken> {
+      console.log("works");
+      return this.client.post<AuthToken>(`${this.BASE_URL}/register/`, {
+        username,
+        email,
+        password,
+      });
     }
 
     signOut() {
