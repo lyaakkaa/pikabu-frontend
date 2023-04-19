@@ -12,7 +12,6 @@ export class LoginMenuComponent implements OnInit{
   registerMode: boolean = false;
   password: string = ""
   username: string = ""
-  email: string = ""
 
   constructor(private authService: AuthService) { }
 
@@ -27,19 +26,21 @@ export class LoginMenuComponent implements OnInit{
 
   submit() {
     if (this.registerMode) {
-      this.email = this.email.trim();
       this.password = this.password.trim();
       this.username = this.username.trim();
-      if (!(this.username && this.password && this.email)) {
+      if (!(this.username && this.password)) {
         window.alert('Email, password and username shouldn\'t be empty!');
         return;
       }
-      this.authService.signUp(this.username, this.password, this.email)
+      this.authService.signUp(this.username, this.password)
         .subscribe((data) => {
+          if (data.token == undefined) {
+            return;
+          }
           localStorage.setItem('token', data.token);
           this.username = '';
-          this.email = '';
           this.password = '';
+          this.logged = true;
         }, error => {
           window.alert('Registration wasn\'t accomplished, please register again!');
         });
@@ -53,11 +54,14 @@ export class LoginMenuComponent implements OnInit{
         return;
       }
       this.authService.signIn(this.username, this.password).subscribe((data)=>{
+        if (data.token == undefined) {
+          return;
+        }
+
         localStorage.setItem('token', data.token);
         this.username = '';
         this.password = '';
         this.logged = true;
-        console.log(data);
       },  error => {
         window.alert('Invalid credentials!');
       });
