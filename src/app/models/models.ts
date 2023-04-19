@@ -6,7 +6,8 @@ export interface IUser{
 }
 
 export interface AuthToken{
-    token: string
+    access: string,
+    refresh: string
 }
 
 export interface IPost{

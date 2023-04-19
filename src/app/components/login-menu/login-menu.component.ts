@@ -36,7 +36,7 @@ export class LoginMenuComponent implements OnInit{
       }
       this.authService.signUp(this.username, this.password, this.email)
         .subscribe((data) => {
-          localStorage.setItem('token', data.token);
+          localStorage.setItem('token', data.access);
           this.username = '';
           this.email = '';
           this.password = '';
@@ -53,7 +53,7 @@ export class LoginMenuComponent implements OnInit{
         return;
       }
       this.authService.signIn(this.username, this.password).subscribe((data)=>{
-        localStorage.setItem('token', data.token);
+        localStorage.setItem('token', data.access);
         this.username = '';
         this.password = '';
         this.logged = true;

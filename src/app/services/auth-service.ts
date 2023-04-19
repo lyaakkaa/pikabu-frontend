@@ -12,7 +12,7 @@ export class AuthService {
     constructor(private client: HttpClient) {}
 
     getToken(): string | null {
-        let token = localStorage.getItem('auth_token');
+        let token = localStorage.getItem('token');
         if (token == null) {
             this.signOut();
             return null;
@@ -27,7 +27,7 @@ export class AuthService {
     // }
     signIn(username: string, password: string): Observable<AuthToken> {
       console.log("works");
-      return this.client.post<AuthToken>(`${this.BASE_URL}/login/`, {
+      return this.client.post<AuthToken>(`${this.BASE_URL}/signin`, {
         username,
         password,
       });
@@ -35,14 +35,13 @@ export class AuthService {
 
     signUp(username: string, password: string, email: string): Observable<AuthToken> {
       console.log("works");
-      return this.client.post<AuthToken>(`${this.BASE_URL}/register/`, {
+      return this.client.post<AuthToken>(`${this.BASE_URL}/signup`, {
         username,
-        email,
         password,
       });
     }
 
     signOut() {
-        localStorage.removeItem('auth_token');
+        localStorage.removeItem('token');
     }
 }
