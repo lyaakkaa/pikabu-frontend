@@ -23,7 +23,7 @@ export interface IPost{
 
 export interface IComment{
     id: number,
-    author: IUser,
+    author: number,
     created_date: Date,
     text: string,
     comment_likes: number

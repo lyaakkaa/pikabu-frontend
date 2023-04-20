@@ -10,7 +10,7 @@ import { CommentService } from 'src/app/services/comment-service';
 })
 export class PostCommentsComponent {
   comments: IComment[];
-  private postId: number;
+  postId: number;
 
   constructor(private commentService: CommentService, private route: ActivatedRoute) { }
 

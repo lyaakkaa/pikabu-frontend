@@ -1,6 +1,6 @@
 <div>
   <div class="comments">
-    <app-comment-form></app-comment-form>
+    <app-comment-form [postId]="postId" ></app-comment-form>
     <div *ngFor="let comment of comments">
       <app-comment [comment]="comment"></app-comment>
     </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IComment } from 'src/app/models/models';
 
 @Component({
@@ -6,9 +6,12 @@ import { IComment } from 'src/app/models/models';
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.css']
 })
-export class CommentComponent {
+export class CommentComponent implements OnInit{
+  username: string | null = ''
+  ngOnInit(): void {
+    this.username = localStorage.getItem('username')
+  }
   @Input() comment: IComment;
-
 
   upvote() {
     this.comment.comment_likes++;

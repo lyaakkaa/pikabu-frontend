@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs";
-import {HttpClient} from '@angular/common/http';
-import {IPost} from "../models/models";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { HttpClient } from '@angular/common/http';
+import { IPost } from "../models/models";
 
 
 @Injectable({
@@ -31,9 +31,6 @@ export class PostService {
       `${this.BASE_URL}/api/posts/${id}`);
   }
 
-  // createPost(newPost: IPost): Observable<IPost> {
-  //   return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, newPost);
-  // }
   createPost(data: object): Observable<IPost> {
     return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, data);
   }
