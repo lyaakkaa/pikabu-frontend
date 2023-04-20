@@ -16,10 +16,8 @@ export class PostCommentsComponent {
 
   ngOnInit(): void {
     this.postId = parseInt(this.route.snapshot.paramMap.get('id') ?? '0');
-    // console.log(this.postId)
     this.commentService.getComments(this.postId).subscribe((comments:IComment[]) => {
       this.comments = comments;
-      // console.log(comments)
     });
   }
 }

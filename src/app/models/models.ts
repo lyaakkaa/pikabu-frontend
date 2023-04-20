@@ -7,6 +7,7 @@ export interface IUser{
 
 export interface AuthToken{
     token: string,
+    id: number,
 }
 
 export interface IPost{
