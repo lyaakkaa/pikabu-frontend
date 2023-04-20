@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { IPost } from 'src/app/models/models';
 import { PostService } from 'src/app/services/post-service';
 import {Router} from "@angular/router";
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-post',
@@ -9,6 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
+  faTrashAlt = faTrashAlt;
   @Input() post: IPost;
   posts: IPost[] = [];
 

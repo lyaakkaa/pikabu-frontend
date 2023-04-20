@@ -15,6 +15,7 @@ import {CommentFormComponent} from './components/comment-form/comment-form.compo
 import {PostFormComponent} from './components/post-form/post-form.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AuthInterceptor} from "./interceptors/auth-interceptor";
 
 
@@ -33,6 +34,7 @@ import {AuthInterceptor} from "./interceptors/auth-interceptor";
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
