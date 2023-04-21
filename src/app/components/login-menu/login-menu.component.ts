@@ -57,6 +57,7 @@ export class LoginMenuComponent implements OnInit{
       }
       this.authService.signIn(this.username, this.password).subscribe((data)=>{
         if (data.token == undefined) {
+          window.alert('Invalid credentials!');
           return;
         }
         localStorage.setItem('username', this.username)

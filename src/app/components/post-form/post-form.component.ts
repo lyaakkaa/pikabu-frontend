@@ -29,7 +29,7 @@ export class PostFormComponent {
       title: this.title,
       body: this.postText,
       author:  localStorage.getItem('id'),
-      category: 0,
+      category: 1,
       post_likes: 0,
       created_date: (new Date()).toISOString(),
     };

@@ -19,4 +19,5 @@ export class NavbarComponent {
   onWindowMouseMove(event: MouseEvent) {
     this.showHeader = event.clientY <= 50;
   }
+
 }

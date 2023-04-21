@@ -10,13 +10,24 @@ import { PostService } from 'src/app/services/post-service';
 })
 export class PostListComponent implements OnInit {
   posts: IPost[];
+  searchText: string = '';
+
+
+
 
 
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     this.postService.getPosts().subscribe((posts) => {
-      this.posts = posts
+      this.posts = posts;
     });
   }
+
+  onSearchTextEntered(searchValue: string){
+    this.searchText = searchValue;
+    // console.log(this.searchText);
+  }
+
+
 }
