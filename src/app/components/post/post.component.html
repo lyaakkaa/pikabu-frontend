@@ -14,7 +14,7 @@
       <p>{{ post.body }}</p>
     </div>
     <br>
-    <p>By {{ author }}</p>
+    <p>By {{ post.author }}</p>
     <div class="post-footer">
       <button class="comments"><a [routerLink]="['/posts', post.id, 'comments']">View Comments</a></button>
       <button class="delete-button" (click)="deletePost(post.id)">

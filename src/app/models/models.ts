@@ -1,7 +1,9 @@
 export interface IUser{
     id: number,
     username: string,
-    password: string
+    password: string,
+    total_rating: number,
+    role: string
 
 }
 
@@ -23,7 +25,7 @@ export interface IPost{
 
 export interface IComment{
     id: number,
-    author: number,
+    author: IUser,
     created_date: Date,
     text: string,
     comment_likes: number

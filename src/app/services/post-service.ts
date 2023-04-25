@@ -34,4 +34,8 @@ export class PostService {
   createPost(data: object): Observable<IPost> {
     return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, data);
   }
+
+  updatePost(post: IPost): Observable<IPost> {
+    return this.client.put<IPost>(`${this.BASE_URL}/api/posts/${post.id}/`, post);
+  }
 }

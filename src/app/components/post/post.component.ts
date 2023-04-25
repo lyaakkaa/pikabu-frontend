@@ -29,13 +29,22 @@ export class PostComponent implements OnInit{
     // })
   }
 
-  upvote() {
+
+  upvote(): void {
     this.post.post_likes++;
+    this.postService.updatePost(this.post).subscribe(post => {
+      this.post = post;
+      console.log(post)
+    })
   }
 
   downvote() {
     if(this.post.post_likes > 0){
       this.post.post_likes--;
+      this.postService.updatePost(this.post).subscribe(post => {
+        this.post = post;
+        console.log(post)
+      })
     }
   }
   listOfComments(post: IPost){
