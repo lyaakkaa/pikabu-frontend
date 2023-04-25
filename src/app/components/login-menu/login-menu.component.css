@@ -111,3 +111,7 @@ button[type="button"]:hover {
   color: white;
   line-height: 20px;
 }
+
+i{
+  color: #8ac858;
+}

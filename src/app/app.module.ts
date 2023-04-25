@@ -17,6 +17,7 @@ import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AuthInterceptor} from "./interceptors/auth-interceptor";
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {AuthInterceptor} from "./interceptors/auth-interceptor";
     CommentFormComponent,
     PostFormComponent,
     SearchBarComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,

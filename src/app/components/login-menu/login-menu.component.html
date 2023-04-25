@@ -22,7 +22,7 @@
 
 <ng-container *ngIf="logged">
   <div class="logged">
-    <h5>Welcome, {{getUserName()}}!</h5>
+    <h5>Welcome, {{getUserName()}}! <a routerLink="/user-info"> <i class="fa fa-gear fa-spin" style="font-size:15px"></i></a></h5>
 
     <button (click)="logout()" type="submit" >Logout</button>
   </div>
