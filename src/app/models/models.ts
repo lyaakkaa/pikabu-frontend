@@ -30,3 +30,8 @@ export interface IComment{
     text: string,
     comment_likes: number
 }
+
+export interface ICategory{
+  name: string,
+  id: number,
+}

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/services/auth-service';
+import {ICategory} from "../../models/models";
+import {CategoryService} from "../../services/category.service";
 
 @Component({
   selector: 'app-login-menu',
@@ -13,6 +15,7 @@ export class LoginMenuComponent implements OnInit{
   password: string = ""
   username: string = ""
 
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -21,6 +24,8 @@ export class LoginMenuComponent implements OnInit{
       this.logged = true;
     }
   }
+
+
 
 
 
