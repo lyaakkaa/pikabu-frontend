@@ -14,6 +14,8 @@ export class LoginMenuComponent implements OnInit{
   registerMode: boolean = false;
   password: string = ""
   username: string = ""
+  name: string = ""
+
 
 
   constructor(private authService: AuthService) { }
@@ -23,6 +25,12 @@ export class LoginMenuComponent implements OnInit{
     if(token){
       this.logged = true;
     }
+  }
+
+  getUserName(){
+    // @ts-ignore
+    this.name = localStorage.getItem('username');
+    return this.name.charAt(0).toUpperCase() + this.name.slice(1);
   }
 
 

@@ -22,7 +22,7 @@
 
 <ng-container *ngIf="logged">
   <div class="logged">
-    <h5>Welcome!</h5>
+    <h5>Welcome, {{getUserName()}}!</h5>
 
     <button (click)="logout()" type="submit" >Logout</button>
   </div>
