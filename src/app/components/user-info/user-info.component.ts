@@ -22,7 +22,6 @@ export class UserInfoComponent implements OnInit{
   getUser(){
     this.usersService.getUser(this.user_id).subscribe((data)=>{
       this.user = data;
-      console.log(this.user)
     })
   }
 

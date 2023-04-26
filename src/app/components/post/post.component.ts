@@ -41,7 +41,7 @@ export class PostComponent implements OnInit{
 
   upvote(): void {
     this.post.post_likes++;
-    this.postService.updatePost(this.post).subscribe(post => {
+    this.postService.updatePost(this.post, this.post.id).subscribe(post => {
       this.post = post;
     })
   }
@@ -49,7 +49,7 @@ export class PostComponent implements OnInit{
   downvote() {
     if(this.post.post_likes > 0){
       this.post.post_likes--;
-      this.postService.updatePost(this.post).subscribe(post => {
+      this.postService.updatePost(this.post, this.post.id).subscribe(post => {
         this.post = post;
       })
     }

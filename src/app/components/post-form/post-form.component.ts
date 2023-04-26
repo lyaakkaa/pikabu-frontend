@@ -76,12 +76,12 @@ export class PostFormComponent implements OnInit {
     const data = {
       title: this.title,
       body: this.postText,
-      author: this.postForEdit?.author ?? localStorage.getItem('id'),
+      author: this.postForEdit!.author,
       category: this.selectedCategory.id,
-      post_likes: 0,
-      created_date: (new Date()).toISOString(),
+      post_likes: this.postForEdit!.post_likes,
+      created_date: this.postForEdit!.created_date,
     };
-    this.postService.updatePost(data).subscribe(post => {
+    this.postService.updatePost(data, this.postForEdit!.id).subscribe(post => {
       this.title = '';
       this.postText = '';
       this.selectedCategory = undefined;
