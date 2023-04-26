@@ -16,9 +16,16 @@ export class PostComponent implements OnInit{
   faEdit = faEdit;
   @Input() post: IPost;
   posts: IPost[] = [];
-  author: IUser | undefined;
 
+  
+  isEditable(): boolean {
+    let currentId = localStorage.getItem('id');
+    let currentRole = localStorage.getItem('role');
+    if (currentId == null) return false;
+    let numberCurrentId = +currentId;
 
+    return numberCurrentId == this.post.author || currentRole == 'admin';
+  }
 
 
   constructor(private router : Router,private postService: PostService, private usersService: UsersService){}

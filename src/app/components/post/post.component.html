@@ -17,10 +17,10 @@
     <p>By {{ post.author_username }}</p>
     <div class="post-footer">
       <button class="comments"><a [routerLink]="['/posts', post.id, 'comments']">View Comments</a></button>
-      <button class="delete-button" (click)="deletePost(post.id)">
+      <button *ngIf="isEditable()" class="delete-button" (click)="deletePost(post.id)">
         <fa-icon [icon]="faTrashAlt"></fa-icon>
       </button>
-      <button class="edit-button">
+      <button *ngIf="isEditable()" class="edit-button">
         <fa-icon [icon]="faEdit"></fa-icon>
       </button>
     </div>

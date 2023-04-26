@@ -51,8 +51,9 @@ export class LoginMenuComponent implements OnInit{
             return;
           }
           localStorage.setItem('token', data.token);
-          localStorage.setItem('username', this.username)
-          localStorage.setItem('id', (data.id).toString())
+          localStorage.setItem('username', this.username);
+          localStorage.setItem('id', (data.id).toString());
+          localStorage.setItem('role', data.role);
           this.username = '';
           this.password = '';
           this.logged = true;
@@ -73,9 +74,10 @@ export class LoginMenuComponent implements OnInit{
           window.alert('Invalid credentials!');
           return;
         }
-        localStorage.setItem('username', this.username)
+        localStorage.setItem('username', this.username);
         localStorage.setItem('token', data.token);
-        localStorage.setItem('id', (data.id).toString())
+        localStorage.setItem('id', (data.id).toString());
+        localStorage.setItem('role', data.role);
         this.username = '';
         this.password = '';
         this.logged = true;

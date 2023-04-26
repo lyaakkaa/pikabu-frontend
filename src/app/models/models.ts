@@ -4,17 +4,17 @@ export interface IUser{
     password: string,
     total_rating: number,
     role: string
-
 }
 
 export interface AuthToken{
     token: string,
     id: number,
+    role: string,
 }
 
 export interface IPost{
     id: number,
-    author: IUser,
+    author: number,
     author_username: string,
     created_date: Date,
     title: string,
