@@ -15,6 +15,7 @@ export interface AuthToken{
 export interface IPost{
     id: number,
     author: IUser,
+    author_username: string,
     created_date: Date,
     title: string,
     body:string,

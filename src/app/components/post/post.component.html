@@ -14,11 +14,14 @@
       <p>{{ post.body }}</p>
     </div>
     <br>
-    <p>By {{ post.author }}</p>
+    <p>By {{ post.author_username }}</p>
     <div class="post-footer">
       <button class="comments"><a [routerLink]="['/posts', post.id, 'comments']">View Comments</a></button>
       <button class="delete-button" (click)="deletePost(post.id)">
         <fa-icon [icon]="faTrashAlt"></fa-icon>
+      </button>
+      <button class="edit-button">
+        <fa-icon [icon]="faEdit"></fa-icon>
       </button>
     </div>
   </div>

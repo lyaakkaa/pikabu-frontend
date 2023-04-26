@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IPost, IUser} from 'src/app/models/models';
 import { PostService } from 'src/app/services/post-service';
 import {Router} from "@angular/router";
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons';
 import {UsersService} from "../../services/users.service";
 
 
@@ -13,6 +13,7 @@ import {UsersService} from "../../services/users.service";
 })
 export class PostComponent implements OnInit{
   faTrashAlt = faTrashAlt;
+  faEdit = faEdit;
   @Input() post: IPost;
   posts: IPost[] = [];
   author: IUser | undefined;
