@@ -18,7 +18,9 @@
     <label for="post-content">Post text</label>
     <textarea id="post-content" name="post-content" rows="8" required [(ngModel)]="postText"></textarea>
 
-    <input type="submit" value="Add post" (click)="createPost()">
+    <input *ngIf="!isEditing" type="submit" value="Add post" (click)="createPost()">
+
+    <input *ngIf="isEditing" type="submit" value="Edit post" (click)="editPost()">
   </form>
   <app-login-menu></app-login-menu>
 </div>

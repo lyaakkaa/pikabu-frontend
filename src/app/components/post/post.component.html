@@ -20,7 +20,7 @@
       <button *ngIf="isEditable()" class="delete-button" (click)="deletePost(post.id)">
         <fa-icon [icon]="faTrashAlt"></fa-icon>
       </button>
-      <button *ngIf="isEditable()" class="edit-button">
+      <button *ngIf="isEditable()" class="edit-button" (click)="editPost()">
         <fa-icon [icon]="faEdit"></fa-icon>
       </button>
     </div>

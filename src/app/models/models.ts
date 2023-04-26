@@ -19,6 +19,7 @@ export interface IPost{
     created_date: Date,
     title: string,
     body:string,
+    category: number,
     post_likes: number,
     post_comments: number,
     comments: IComment[]

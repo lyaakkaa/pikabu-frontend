@@ -18,6 +18,11 @@ export class PostComponent implements OnInit{
   posts: IPost[] = [];
 
   
+  editPost() {
+    this.postService.setPostForEdit(this.post);
+    this.router.navigate(['/post', this.post.id])
+  }
+
   isEditable(): boolean {
     let currentId = localStorage.getItem('id');
     let currentRole = localStorage.getItem('role');
@@ -31,10 +36,6 @@ export class PostComponent implements OnInit{
   constructor(private router : Router,private postService: PostService, private usersService: UsersService){}
 
   ngOnInit(): void {
-    // this.usersService.getUser(this.post.author.id).subscribe((data)=>{
-    //   console.log(data)
-    //   this.author= data;
-    // })
   }
 
 
@@ -42,7 +43,6 @@ export class PostComponent implements OnInit{
     this.post.post_likes++;
     this.postService.updatePost(this.post).subscribe(post => {
       this.post = post;
-      console.log(post)
     })
   }
 
@@ -51,7 +51,6 @@ export class PostComponent implements OnInit{
       this.post.post_likes--;
       this.postService.updatePost(this.post).subscribe(post => {
         this.post = post;
-        console.log(post)
       })
     }
   }

@@ -14,6 +14,18 @@ export class PostService {
   constructor(private client: HttpClient) {
   }
 
+  private postForEdit: IPost | null;
+
+  setPostForEdit(post: IPost) {
+    this.postForEdit = post;
+  }
+
+  getPostForEdit(): IPost | null {
+    let postForReturn = this.postForEdit;
+    this.postForEdit = null;
+    return postForReturn;
+  }
+
   getPosts(): Observable<IPost[]> {
     return this.client.get<IPost[]>(`${this.BASE_URL}/api/posts/`);
   }
@@ -35,7 +47,7 @@ export class PostService {
     return this.client.post<IPost>(`${this.BASE_URL}/api/posts/`, data);
   }
 
-  updatePost(post: IPost): Observable<IPost> {
-    return this.client.put<IPost>(`${this.BASE_URL}/api/posts/${post.id}/`, post);
+  updatePost(data: object): Observable<IPost> {
+    return this.client.put<IPost>(`${this.BASE_URL}/api/posts/${(data as { author: number }).author}/`, data);
   }
 }
