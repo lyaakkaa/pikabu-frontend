@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient } from '@angular/common/http';
 import { IPost } from "../models/models";
+import { HttpParams } from "@angular/common/http";
 
 
 @Injectable({
@@ -26,8 +27,12 @@ export class PostService {
     return postForReturn;
   }
 
-  getPosts(): Observable<IPost[]> {
-    return this.client.get<IPost[]>(`${this.BASE_URL}/api/posts/`);
+  getPosts(category: string): Observable<IPost[]> {
+    if (category == '') {
+      category = 'hot';
+    }
+    let params = new HttpParams().set('category', category);
+    return this.client.get<IPost[]>(`${this.BASE_URL}/api/posts`, {params});
   }
 
   getPostDetail(id: string): Observable<IPost> {
