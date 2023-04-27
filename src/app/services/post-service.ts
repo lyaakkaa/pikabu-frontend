@@ -58,4 +58,8 @@ export class PostService {
   updatePost(data: object, postId: number): Observable<IPost> {
     return this.client.put<IPost>(`${this.BASE_URL}/api/posts/${postId}/`, data);
   }
+
+  likePost(data: Object): Observable<any> {
+    return this.client.post(`${this.BASE_URL}/api/likes`, data);
+  }
 }

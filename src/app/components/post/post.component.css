@@ -105,7 +105,6 @@ hr {
   cursor: pointer;
 }
 
-/* Add these styles to make the button look similar to other buttons */
 .delete-button {
   margin: 0 5px;
   display: inline-flex;

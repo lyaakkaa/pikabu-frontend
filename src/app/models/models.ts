@@ -20,7 +20,7 @@ export interface IPost{
     title: string,
     body:string,
     category: number,
-    post_likes: number,
+    like_count: number,
     post_comments: number,
     comments: IComment[]
 }

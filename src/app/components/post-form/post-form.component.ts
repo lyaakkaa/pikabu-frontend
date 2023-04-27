@@ -55,7 +55,6 @@ export class PostFormComponent implements OnInit {
       body: this.postText,
       author: localStorage.getItem('id'),
       category: this.selectedCategory.id,
-      post_likes: 0,
       created_date: (new Date()).toISOString(),
     };
     this.postService.createPost(data).subscribe(post => {
@@ -78,7 +77,6 @@ export class PostFormComponent implements OnInit {
       body: this.postText,
       author: this.postForEdit!.author,
       category: this.selectedCategory.id,
-      post_likes: this.postForEdit!.post_likes,
       created_date: this.postForEdit!.created_date,
     };
     this.postService.updatePost(data, this.postForEdit!.id).subscribe(post => {

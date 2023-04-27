@@ -45,19 +45,27 @@ export class PostComponent implements OnInit{
 
 
   upvote(): void {
-    this.post.post_likes++;
-    this.postService.updatePost(this.post, this.post.id).subscribe(post => {
-      this.post = post;
+    const data = {
+      post: this.post.id,
+      user: localStorage.getItem('id'),
+      liked: true
+    };
+    this.postService.likePost(data).subscribe(_ => {
+      console.log('up')
+      this.postService.getPostDetail(this.post.id.toString()).subscribe(post => {this.post = post});
     })
   }
 
   downvote() {
-    if(this.post.post_likes > 0){
-      this.post.post_likes--;
-      this.postService.updatePost(this.post, this.post.id).subscribe(post => {
-        this.post = post;
-      })
-    }
+    const data = {
+      post: this.post.id,
+      user: localStorage.getItem('id'),
+      liked: false
+    };
+    this.postService.likePost(data).subscribe(_ => {
+      console.log('down')
+      this.postService.getPostDetail(this.post.id.toString()).subscribe(post => {this.post = post});
+    })
   }
   listOfComments(post: IPost){
     this.router.navigate(['/posts', post.id, 'comments'])
@@ -74,8 +82,4 @@ export class PostComponent implements OnInit{
   onPostsChanged() {
     this.postsChange.emit(this.posts);
   }
-
-
-
-
 }
