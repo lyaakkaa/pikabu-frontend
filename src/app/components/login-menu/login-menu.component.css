@@ -77,21 +77,26 @@ button[type="button"]:hover {
   opacity: 0.8;
 }
 
-
-.add-post {
+.user-actions {
   position: fixed;
-  top: 220px;
+  top: 230px;
   left: 70%;
   width: 20%;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-post {
+  left: 70%;
+  margin-bottom: 10px;
 }
 
 .add-post button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   width: 100%;
-  padding: 10px;
+  height: 40px;
   border: none;
   border-radius: 5px;
   background-color: #8ac858;
@@ -99,6 +104,26 @@ button[type="button"]:hover {
 }
 
 .add-post button:hover {
+  opacity: 0.8;
+}
+
+.personal-posts {
+  left: 70%;
+}
+
+.personal-posts button {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e9e9e9;
+  color: #757575;
+}
+
+.personal-posts button:hover {
   opacity: 0.8;
 }
 

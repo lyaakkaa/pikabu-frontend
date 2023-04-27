@@ -5,7 +5,7 @@ import { PostCommentsComponent } from './components/post-comments/post-comments.
 import { PostFormComponent } from "./components/post-form/post-form.component";
 import { SearchBarComponent } from "./components/search-bar/search-bar.component";
 import { UserInfoComponent } from "./components/user-info/user-info.component";
-import {UserPostsComponent} from "./components/user-posts/user-posts.component";
+import { UserPostsComponent } from "./components/user-posts/user-posts.component";
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'user-info', component: UserInfoComponent },
   { path: 'users/:id/posts', component: UserPostsComponent },
   { path: 'post/:id', component: PostFormComponent },
-
+  { path: 'personal', component: PostListComponent }
 ];
 
 @NgModule({
