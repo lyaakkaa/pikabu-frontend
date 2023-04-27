@@ -1,15 +1,14 @@
 .comment {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .likes {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .likes button {
@@ -22,20 +21,21 @@
     margin: 0 20px;
 }
 
-.details {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    margin-top: 20px;
-}
-
-.details span {
-    margin-right: 10px;
-}
-
 .text {
-    white-space: pre-wrap;
+  margin-bottom: 10px;
 }
+
+.details {
+  color: #999;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details span:first-child {
+  margin-right: 10px;
+}
+
 
 .likes button.upvote {
     border: 10px solid transparent;
@@ -48,26 +48,22 @@
     border-top: 10px solid #000;
     border-bottom: none;
 }
-.delete-button {
-  background-color: #ff3333;
-  color: #fff;
+.delete-button,
+.edit-button {
+  background-color: transparent;
   border: none;
-  border-radius: 3px;
-  padding: 5px 10px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  outline: none;
+  padding: 0;
+  margin-left: 5px;
 }
 
-.delete-button:hover {
-  background-color: #cc0000;
+.delete-button:hover,
+.edit-button:hover {
+  color: #d9534f;
 }
 
-/* Add these styles to make the button look similar to other buttons */
-.delete-button {
-  margin: 0 5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
+.delete-button fa-icon,
+.edit-button fa-icon {
+  font-size: 16px;
 }

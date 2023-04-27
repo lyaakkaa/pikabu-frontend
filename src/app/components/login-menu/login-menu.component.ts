@@ -74,6 +74,7 @@ export class LoginMenuComponent implements OnInit{
           window.alert('Invalid credentials!');
           return;
         }
+        console.log(data)
         localStorage.setItem('username', this.username);
         localStorage.setItem('token', data.token);
         localStorage.setItem('id', (data.id).toString());

@@ -17,7 +17,7 @@ export class PostComponent implements OnInit{
   @Input() post: IPost;
   posts: IPost[] = [];
 
-  
+
   editPost() {
     this.postService.setPostForEdit(this.post);
     this.router.navigate(['/post', this.post.id])
@@ -28,6 +28,7 @@ export class PostComponent implements OnInit{
     let currentRole = localStorage.getItem('role');
     if (currentId == null) return false;
     let numberCurrentId = +currentId;
+    // console.log(currentRole)
 
     return numberCurrentId == this.post.author || currentRole == 'admin';
   }
