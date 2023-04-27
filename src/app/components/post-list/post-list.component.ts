@@ -14,9 +14,6 @@ export class PostListComponent implements OnInit {
   searchText: string = '';
 
 
-
-
-
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

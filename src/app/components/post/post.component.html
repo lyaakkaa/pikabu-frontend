@@ -14,7 +14,8 @@
       <p>{{ post.body }}</p>
     </div>
     <br>
-    <p>By {{ post.author_username }}</p>
+    <p>By <a (click)="filterByAuthor(post.author)">{{ post.author_username }}</a></p>
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
     <div class="post-footer">
       <button class="comments"><a [routerLink]="['/posts', post.id, 'comments']">View Comments</a></button>
       <button *ngIf="isEditable()" class="delete-button" (click)="deletePost(post.id)">

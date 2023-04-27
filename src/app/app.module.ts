@@ -18,6 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AuthInterceptor} from "./interceptors/auth-interceptor";
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserPostsComponent} from "./components/user-posts/user-posts.component";
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     PostFormComponent,
     SearchBarComponent,
     UserInfoComponent,
+    UserPostsComponent
   ],
   imports: [
     BrowserModule,

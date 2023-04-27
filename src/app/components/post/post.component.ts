@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IPost, IUser} from 'src/app/models/models';
 import { PostService } from 'src/app/services/post-service';
 import {Router} from "@angular/router";
@@ -12,11 +12,14 @@ import {UsersService} from "../../services/users.service";
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit{
+  @Input() post: IPost;
+  @Output() postsChange = new EventEmitter<IPost[]>();
   faTrashAlt = faTrashAlt;
   faEdit = faEdit;
-  @Input() post: IPost;
-  posts: IPost[] = [];
 
+  posts: IPost[] = [];
+  user_id: number;
+  user: IUser;
 
   editPost() {
     this.postService.setPostForEdit(this.post);
@@ -37,6 +40,7 @@ export class PostComponent implements OnInit{
   constructor(private router : Router,private postService: PostService, private usersService: UsersService){}
 
   ngOnInit(): void {
+
   }
 
 
@@ -63,6 +67,18 @@ export class PostComponent implements OnInit{
       this.posts = this.posts.filter((post) => post.id !== post_id);
     });
   }
+  filterByAuthor(authorId: number) {
+    this.router.navigate(['/users', authorId, 'posts'])
+    this.postService.getPostsByAuthor(authorId).subscribe(posts => {
+      this.posts = posts;
+      this.postsChange.emit(posts);
+    });
+  }
+  onPostsChanged() {
+    this.postsChange.emit(this.posts);
+  }
+
+
 
 
 }
