@@ -11,18 +11,15 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UserPostsComponent implements OnInit{
   posts: IPost[] = [];
+  author_id!: number;
   searchText: string = '';
 
-  onPostsChange(posts: IPost[]) {
-    this.posts = posts;
-  }
+
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let urlSegments = this.route.snapshot.url.toString().split('/');
-    let currentCategory = urlSegments[urlSegments.length - 1];
-
-    this.postService.getPosts(currentCategory).subscribe((posts) => {
+    this.author_id = this.route.snapshot.params['id'];
+    this.postService.getPostsByAuthor(this.author_id).subscribe(posts => {
       this.posts = posts;
     });
   }

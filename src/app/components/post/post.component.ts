@@ -69,10 +69,7 @@ export class PostComponent implements OnInit{
   }
   filterByAuthor(authorId: number) {
     this.router.navigate(['/users', authorId, 'posts'])
-    this.postService.getPostsByAuthor(authorId).subscribe(posts => {
-      this.posts = posts;
-      this.postsChange.emit(posts);
-    });
+
   }
   onPostsChanged() {
     this.postsChange.emit(this.posts);
