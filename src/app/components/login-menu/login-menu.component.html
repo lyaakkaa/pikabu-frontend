@@ -1,25 +1,41 @@
-<div class="login-menu">
-  <form>
-    <div class="form-group">
-      <label for="nickname">Nickname</label>
-      <input [(ngModel)]="username" type="email" id="Username" name="Username" placeholder="Username" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input [(ngModel)]="password" type="password" id="password" name="password" placeholder="Password" required>
-      <a href="#" *ngIf="!registerMode">Forgot password?</a>
-    </div>
-    <div class="form-group">
-      <button (click)="submit()" type="submit" *ngIf="!registerMode">Login</button>
-      <button type="button" id="secondary-button-register" (click)="registerMode = true" *ngIf="!registerMode">Register</button>
-      <button (click)="submit()" type="submit"  *ngIf="registerMode">Register</button>
-      <button type="button" id="secondary-button-login" (click)="registerMode = false" *ngIf="registerMode">I already have an account</button>
-    </div>
+<ng-container *ngIf="!logged">
+  <div class="login-menu">
+    <form>
+      <div class="form-group">
+        <label for="username">Nickname</label>
+        <input [(ngModel)]="username" type="email" id="Username" name="Username" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" type="password" id="password" name="password" placeholder="Password" required>
+      </div>
+      <div class="form-group">
+        <button (click)="submit()" type="submit" *ngIf="!registerMode">Login</button>
+        <button type="button" id="secondary-button-register" (click)="registerMode = true"
+          *ngIf="!registerMode">Register</button>
+        <button (click)="submit()" type="submit" *ngIf="registerMode">Register</button>
+        <button type="button" id="secondary-button-login" (click)="registerMode = false" *ngIf="registerMode">I already
+          have an account</button>
+      </div>
+    </form>
+  </div>
+</ng-container>
 
 
-  </form>
-</div>
-<div class="add-post">
-  <button routerLink="/post/add"> <span class="plus-icon">+</span> Add post </button>
-</div>
+<ng-container *ngIf="logged">
 
+  <div class="logged">
+    <h5>Welcome, {{getUserName()}}! <a routerLink="/user-info"> <i class="fa fa-gear fa-spin"
+          style="font-size:15px"></i></a></h5>
+
+    <button (click)="logout()" type="submit">Logout</button>
+  </div>
+  <div class="user-actions">
+    <div class="add-post">
+      <button routerLink="/post/add"> <span class="plus-icon">+</span> Add post </button>
+    </div>
+    <div class="personal-posts">
+      <button routerLink="/personal"> My posts </button>
+    </div>
+  </div>
+</ng-container>

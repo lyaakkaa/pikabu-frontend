@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #f2f2f2;
+  color: #999;
+  font-size: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info fieldset {
+  margin-bottom: 10px;
+  border: none;
+}
+
+.profile-info label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.profile-info input[type="text"],
+.profile-info input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel,
+.submit {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+}
+
+.submit {
+  background-color: #8ac858;
+  color: #fff;
+  border: none;
+}

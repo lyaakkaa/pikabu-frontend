@@ -1,28 +1,40 @@
 export interface IUser{
     id: number,
     username: string,
-    password: string
+    password: string,
+    total_rating: number,
+    role: string
 }
 
 export interface AuthToken{
-    token: string
+    token: string,
+    id: number,
+    role: string,
 }
 
 export interface IPost{
     id: number,
-    author: IUser,
+    author: number,
+    author_username: string,
     created_date: Date,
     title: string,
     body:string,
-    post_likes: number,
+    category: number,
+    like_count: number,
     post_comments: number,
     comments: IComment[]
 }
 
 export interface IComment{
     id: number,
-    author: IUser,
+    author: number,
+    author_username: string,
     created_date: Date,
     text: string,
     comment_likes: number
+}
+
+export interface ICategory{
+  name: string,
+  id: number,
 }

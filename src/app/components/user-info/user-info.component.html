@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="content">
+    <div class="user">
+      <div class="avatar">{{getLetter()}}</div>
+    </div>
+
+    <form *ngIf="user" class="profile-info">
+      <fieldset>
+        <label>Username:</label>
+        <input name="firstname" type="text" placeholder="Enter new firstname here" [(ngModel)]="user.username">
+      </fieldset>
+
+      <fieldset>
+        <label>Password:</label>
+        <input name="password" type="password" placeholder="Change password" [(ngModel)]="user.password">
+      </fieldset>
+
+      <div class="form-buttons">
+        <button class="cancel" (click)="getUser()">Cancel editing</button>
+        <button class="submit" (click)="updateUser()">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

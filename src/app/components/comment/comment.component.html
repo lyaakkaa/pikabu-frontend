@@ -5,10 +5,14 @@
         <span>{{ comment.comment_likes }}</span>
         <button (click)="downvote()" class="downvote">
         </button>
+        <button class="delete-button" *ngIf="isEditable()" (click)="deleteComment()" >
+          <fa-icon [icon]="faTrashAlt"></fa-icon>
+        </button>
+
     </div>
     <div class="text">{{ comment.text }}</div>
     <div class="details">
-        <span>{{ comment.author.username }}</span>
+        <span>{{ comment.author_username }}</span>
         <span>{{ comment.created_date | date }}</span>
     </div>
 </div>

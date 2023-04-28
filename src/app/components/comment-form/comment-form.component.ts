@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { IComment, IUser } from 'src/app/models/models';
 import { CommentService } from 'src/app/services/comment-service';
 
@@ -7,30 +7,23 @@ import { CommentService } from 'src/app/services/comment-service';
   templateUrl: './comment-form.component.html',
   styleUrls: ['./comment-form.component.css']
 })
-export class CommentFormComponent{
-  @Output() commentCreated = new EventEmitter<IComment>();
+export class CommentFormComponent {
+  @Input() postId: number;
 
-  author: string = '';
   text: string = '';
 
-  constructor() { }
+  constructor(private commentService: CommentService) {
+  }
 
   onSubmit() {
-    const author: IUser = {
-
-      id: 0,
-      username: this.author,
-      password: ''
-    };
-    const comment: IComment = {
-      id: 0,
-      author,
-      created_date: new Date(),
+    this.commentService.createComment(this.postId, { 
+      author: Number(localStorage.getItem('id')),
+      created_date: (new Date()).toISOString(),
       text: this.text,
-      comment_likes: 0
-    };
-    this.commentCreated.emit(comment);
-    this.author = '';
-    this.text = '';
+      comment_likes: 0,
+      post: this.postId,
+   }).subscribe((comment) => {
+    console.log(comment);
+   });
   }
 }

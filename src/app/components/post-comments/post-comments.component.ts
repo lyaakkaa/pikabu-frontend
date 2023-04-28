@@ -10,16 +10,14 @@ import { CommentService } from 'src/app/services/comment-service';
 })
 export class PostCommentsComponent {
   comments: IComment[];
-  private postId: number;
+  postId: number;
 
   constructor(private commentService: CommentService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.postId = parseInt(this.route.snapshot.paramMap.get('id') ?? '0');
-    // console.log(this.postId)
     this.commentService.getComments(this.postId).subscribe((comments:IComment[]) => {
       this.comments = comments;
-      // console.log(comments)
     });
   }
 }
